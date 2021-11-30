@@ -47,3 +47,6 @@
 .sendMail-message {
     flex: 1;
 }
+.sendMail-off {
+    display: none;
+}

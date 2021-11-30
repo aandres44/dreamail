@@ -1,54 +1,57 @@
 import { Button } from '@material-ui/core'
 import { Add, ExpandMore, Inbox, LabelImportant, NearMe, Note, Star } from '@material-ui/icons'
 import React from 'react'
+import { useNavigate } from 'react-router'
 import "./Sidebar.css"
 import SidebarOption from './SidebarOption'
 
 function Sidebar() {
-    
+
+    const history = useNavigate();
+
     function test() {
 
     }
 
     return (
         <div className="sidebar">
-            <Button 
-                startIcon={<Add fontSize="large" />}
+            <Button
                 className="sidebar-compose"
-                onClick={test}
+                onClick={() => history("/news")}
             >
-                Redactar
+                Noticias
             </Button>
-            
-            <SidebarOption 
+            <SidebarOption
+                Icon={Star}
+                title="Favs"
+                number={120}
+                
+            />
+
+            <SidebarOption
                 Icon={Inbox}
                 title="Inbox"
                 number={54} selected={true}
             />
-            <SidebarOption 
-                Icon={Star}
-                title="Favoritos"
-                number={54}
-            />
-            <SidebarOption 
+            <SidebarOption
                 Icon={LabelImportant}
                 title="Importante"
-                number={54}
+                
             />
-            <SidebarOption 
+            <SidebarOption
                 Icon={NearMe}
                 title="Enviado"
-                number={54}
+                
             />
-            <SidebarOption 
+            <SidebarOption
                 Icon={Note}
                 title="Borradores"
-                number={54}
+                
             />
-            <SidebarOption 
+            <SidebarOption
                 Icon={ExpandMore}
                 title="Mas"
-                number={54}
+                
             />
         </div>
     )

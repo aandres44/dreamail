@@ -2,13 +2,17 @@ import { Button } from '@material-ui/core'
 import { Close } from '@material-ui/icons'
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'react-router'
 import "./SendMail.css"
+
 
 function SendMail() {
     const environment = "http://127.0.0.1:5000/mail/send"
     const { register, handleSubmit, watch, errors } = useForm()
-
+    //const news;
     const [mail, setMail] = useState()
+    const history = useNavigate();
+    
 
     const onSubmit = (tmp) => {
         let formData = tmp
@@ -35,7 +39,7 @@ function SendMail() {
     }
 
     return (
-        <div className="sendMail">
+        <div className={"sendMail" /*+ news && "sendMail-off"*/}>
             <div className="sendMail-header">
                 <h3>Nuevo Correo</h3>
                 <Close className="sendMail-close" />

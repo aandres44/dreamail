@@ -36,28 +36,26 @@ function EmailList() {
     } else {
 
     }
-    setIsLoaded(false);
-
 
 
     const reloadMails = () => {
-        // const postOnline = {
-        //     method: 'POST',
-        //     headers: { 'Content-Type': 'application/json' },
-        //     body: JSON.stringify({
-        //         "from": "prueba.de.web.eduardo@gmail.com",
-        //         "password": "Me294?83",
-        //         "date": "11-Nov-2021"
-        //     })
-        // };
-        // fetch(environmentOnline, postOnline)
-        //     .then(res => res.json())
-        //     .then(
-        //         (data) => {
-        //             setIsLoaded(true);
-        //             setMails(data["content"]);
-        //         }
-        //     )
+        const postOnline = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                "from": "prueba.de.web.eduardo@gmail.com",
+                "password": "Me294?83",
+                "date": "11-Nov-2021"
+            })
+        };
+        fetch(environmentOnline, postOnline)
+            .then(res => res.json())
+            .then(
+                (data) => {
+                    setIsLoaded(true);
+                    setMails(data["content"]);
+                }
+            )
     }
 
     return (
@@ -68,7 +66,7 @@ function EmailList() {
                     <IconButton>
                         <ArrowDropDown />
                     </IconButton>
-                    <IconButton onClick={reloadMails()}>
+                    <IconButton onClick={reloadMails}>
                         <Redo />
                     </IconButton>
                     <IconButton>
@@ -92,9 +90,9 @@ function EmailList() {
 
             </div>
             <div className="emailList-sections">
-                <Section Icon={Inbox} title="Prioritarios" color="red" selected />
+                <Section Icon={Inbox} title="Prioritarios" color="orange" selected />
                 <Section Icon={Inbox} title="Social" color="blue" selected />
-                <Section Icon={Inbox} title="Ofertas" color="green" selected />
+                <Section Icon={Inbox} title="Ofertas" color="purple" selected />
             </div>
 
             <div className="emailList-list">
