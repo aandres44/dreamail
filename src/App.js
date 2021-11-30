@@ -7,6 +7,7 @@ import Sidebar from './Components/Sidebar/Sidebar';
 import EmailList from './Components/Mail/EmailList/EmailList';
 import Mail from './Components/Mail/Mail'
 import { Footer } from './Components/Footer/Footer';
+import SendMail from './Components/Mail/SendMail/SendMail';
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
             <Route exact path="/" element={<EmailList/>} />
           </Switch>
         </div>
-        <Footer />
+        <SendMail />
       </div>
     </Router>
   );

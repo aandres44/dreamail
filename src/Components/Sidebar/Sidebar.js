@@ -5,13 +5,19 @@ import "./Sidebar.css"
 import SidebarOption from './SidebarOption'
 
 function Sidebar() {
+    
+    function test() {
+
+    }
+
     return (
         <div className="sidebar">
             <Button 
                 startIcon={<Add fontSize="large" />}
                 className="sidebar-compose"
+                onClick={test}
             >
-                Compose
+                Redactar
             </Button>
             
             <SidebarOption 

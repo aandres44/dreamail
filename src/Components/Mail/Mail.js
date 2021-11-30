@@ -1,12 +1,13 @@
 import { ArrowBack, CheckCircle, Delete, Email, Error, ExitToApp, LabelImportant, MoreVert, MoveToInbox, Print, UnfoldMore, WatchLater } from '@material-ui/icons'
 import { IconButton } from '@material-ui/core'
 import React from 'react'
-import { useNavigate } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import "./Mail.css"
 
 function Mail() {
     const history = useNavigate()
-
+    const location = useLocation()
+    
     return (
         <div className="mail">
             <div className="mail-tools">
@@ -53,13 +54,13 @@ function Mail() {
             </div>
             <div className="mail-body">
                 <div className="mail-body-header">
-                    <h2>Subject</h2>
+                    <h2>{location.state.subject}</h2>
                     <LabelImportant className="mail-important"/>
-                    <p>Title</p>
-                    <p className="mail-time">10pm</p>
+                    <p>{location.state.title}</p>
+                    <p className="mail-time">{location.state.time}</p>
                 </div>
                 <div className="mail-message">
-                    <p>This is a message</p>
+                    <p>{location.state.message}</p>
                 </div>
             </div>
         </div>

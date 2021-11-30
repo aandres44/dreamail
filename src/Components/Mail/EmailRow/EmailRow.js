@@ -9,7 +9,7 @@ export const EmailRow = ({ id, title, subject, description, time }) => {
     const history = useNavigate();
 
     return (
-        <div onClick={() => history("/mail")} className="emailRow">
+        <div onClick={() => history("/mail", {state:{subject:subject, title:title, message: description, time:time}})} className="emailRow">
             <div className="emailRow-options">
                 <Checkbox />
                 <IconButton>
